@@ -48,27 +48,26 @@ async function main() {
     {
       role: 'user',
       content: `
-  Generate:
-  1. A Korean advertising copy (20-30 characters max, with hashtags) for Instagram post.
-  2. An English image prompt that:
-     - Visually reflects the product and vibe.
-     - Uses the reference image *as-is* without any alteration.
-     - Clearly shows the red label and iconic bottle shape.
-     - Embeds the Korean ad copy text naturally in the image (center or bottom).
-     - The product and logo must remain unedited and highly visible.
-  
-  Return JSON only:
-  \`\`\`json
-  {
-    "advertising_copy": "한국어 광고 문구",
-    "image_prompt": "A 3x3 mood board layout featuring a Chanel No.5 Eau de Parfum bottle at the center. Surrounding it are luxurious elements like pearls, jasmine flowers, soft pink roses, gold foil texture, powdery blush, and crystal glass. The perfume bottle is fully visible, centered, and unedited, with the label and shape clearly highlighted. Warm beige background. Studio lighting. Editorial style."
-
-  }
-  \`\`\`
-  
-  --- INPUT CONTEXT ---
-  ${context}
-  `.trim(),
+      Generate:
+      1. A Korean advertising copy (20-30 characters max, with hashtags) for Instagram post.
+      2. An English image prompt that:
+         - Visually reflects the product and vibe.
+         - Uses the reference image *as-is* without any alteration.
+         - Clearly shows the main product and its key visual features.
+         - Embeds the Korean ad copy text naturally in the image (center or bottom).
+         - The product and logo must remain unedited and highly visible.
+      
+      Return JSON only with this structure:
+      \`\`\`json
+      {
+        "advertising_copy": "...",
+        "image_prompt": "..."
+      }
+      \`\`\`
+      
+      --- INPUT CONTEXT ---
+      ${context}
+      `.trim(),
     },
   ];
 
